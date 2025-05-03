@@ -15,14 +15,32 @@ Else
 6.	Return 0
  
 Program:
-
-//type your code here
-
-
+```
+#include <stdio.h>
+#include <string.h>
+struct Person {
+    int age;
+    char name[50];
+    char vaccine[20];
+};
+int main() {
+    struct Person person;
+    scanf("%d", &person.age);
+    scanf("%s", person.name);
+    if (person.age >= 18) {
+        sprintf(person.vaccine, "%d", person.age); 
+    } else {
+        strcpy(person.vaccine, "not eligible"); 
+    }
+    printf("Age:%d\n", person.age);
+    printf("Name:%s", person.name);
+    printf("vaccine:%s\n", person.vaccine);
+    printf("eligibility:%s\n", (person.age > 18) ? "yes" : "no");
+    return 0;
+}
+```
 Output:
-
-//paste your output here
-
+![Screenshot 2025-05-03 114049](https://github.com/user-attachments/assets/211ea419-b12d-444e-9c77-8875756e4938)
 
 Result:
 Thus, the program is verified successfully. 
