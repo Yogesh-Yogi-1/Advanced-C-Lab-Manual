@@ -12,14 +12,50 @@ Algorithm:
 7.	Use the display function to visualize the stack's contents
  
 Program:
-
-//type your code here
-
+```
+char stack[100];
+int size=3,top=-1,i;
+void push (float data)
+{
+    if (top == size-1 )
+    {
+    printf("stack is full\n");
+    }
+    else
+    {
+        top = top +1;
+        stack[top] = data;
+    }
+}
+void display()
+{
+    for (i=top;i>=0;i--)
+    {
+        printf("%c\n",stack[i]);
+    }
+    if(top == -1)
+    {
+        printf("stack is empty\n");
+    }
+}
+void pop ()
+{
+    if(top == -1)
+    {
+    printf("stack is empty\n");
+    }
+    else
+    {
+    top = top -1;
+    }
+}
+void peek()
+{
+    printf("%c\n",stack[top]);
+}
+```
 Output:
-
-//paste your output here
-
-
+![image](https://github.com/user-attachments/assets/23ab7187-17df-449e-9837-47aec24bd4ff)
 
 Result:
 Thus, the program to display stack elements using an array is verified successfully.
