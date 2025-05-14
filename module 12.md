@@ -181,14 +181,19 @@ o	If the queue is empty (i.e., the front pointer is NULL), return an error or a 
 o	If the queue is not empty, return the data stored in the front node of the linked list (i.e., the element at the head of the queue).
 
 Program:
-
-//type your code here
-
+```
+struct Node
+{
+   int data;
+   struct Node *next;
+}*front=NULL,*rear=NULL;
+void peek()
+{
+    printf("%d \n",front->data);
+}
+```
 Output:
-
-//paste your output here
-
-
+![image](https://github.com/user-attachments/assets/6bb2b736-df75-4709-98ec-9d77400f9cec)
 
 Result:
 
