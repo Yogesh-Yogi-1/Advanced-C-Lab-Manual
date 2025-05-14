@@ -12,10 +12,24 @@ Algorithm:
 5.	Call the max_of_four function with the input integers and store the result in the greater variable
  
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+int main()
+{
+    int a,b,c,d;
+    scanf("%d %d %d %d",&a,&b,&c,&d);
+    if(a>b && a>c && a>d)
+    printf("%d",a);
+    if(b>a && b>c && b>d)
+    printf("%d",b);
+    if(c>a && c>b && c>d)
+    printf("%d",c);
+    if(d>a && d>b && d>c)
+    printf("%d",d);
+}
+```
 Output:
-//paste your output here
+![image](https://github.com/user-attachments/assets/ee762e57-9d38-4b28-86e5-3582f6ab672e)
 
 Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
@@ -36,10 +50,40 @@ Algorithm:
 7.	Call the calculate_the_max function with input values.
  
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    int maxa=0,maxo=0,maxx=0;
+    scanf("%d%d",&a,&b);
+    for(int i=1;i<=a;i++)
+    {
+        for(int j=i+1;j<=a;j++)
+        {
+            int x,y,z;
+            x=i&j;
+            y=i|j;
+            z=i^j;
+            if(x>=maxa && x<b)
+            {
+                maxa=x;
+            }
+            if(y>=maxo && y<b)
+            {
+                maxo=y;
+            }
+            if(z>=maxx && z<b)
+            {
+                maxx=z;
+            }
+        }
+    }
+    printf("%d\n%d\n%d\n",maxa,maxo,maxx);
+}
+```
 Output:
-//paste your output here
+![image](https://github.com/user-attachments/assets/d250e38b-b3f8-4dac-b55c-d129e7677680)
 
 Result:
 Thus, the program to print the maximum values for the AND, OR and XOR comparisons
@@ -59,11 +103,43 @@ Algorithm:
 5.	Use a for loop to iterate over the queries.
  
 Program:
-//type your code here
-
+```
+# include <stdio.h>
+# include <stdlib.h>
+int main()
+{
+    int numShelves,numRequests;
+    scanf("%d%d",&numShelves,&numRequests);
+    int**shelves=(int**)malloc(numShelves*sizeof(int*));
+    int*shelfSizes = (int*)calloc(numShelves,sizeof(int));
+    for(int i=0;i<numRequests;++i)
+    {
+        int queryType,x,y;
+        scanf("%d",&queryType);
+        if(queryType==1)
+        {
+            scanf("%d%d",&x,&y);
+            shelves[x] = realloc(shelves[x],(shelfSizes[x]+1)*sizeof(int));
+            shelves[x][shelfSizes[x]] = y;
+            shelfSizes[x]++;
+        }else if(queryType==2){
+            scanf("%d%d",&x,&y);
+            printf("%d\n",shelves[x][y]);
+        }else if(queryType==3){
+            scanf("%d",&x);
+            printf("%d\n",shelfSizes[x]);
+        }
+    }
+    for(int i=0;i<numShelves;++i){
+        free(shelves[i]);
+    }
+    free(shelves);
+    free(shelfSizes);
+    return 0;
+}
+```
 Output:
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/16d7fcc4-9492-431a-ad18-c37a5013dc41)
 
 Result:
 Thus, the program to write the logic for the requests is verified successfully.
@@ -86,13 +162,22 @@ Algorithm:
 
 
 Program:
-//type your code here
-
+```
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int a,sum=0;
+    scanf("%d",&a);
+    int *n=(int*)malloc(a*sizeof(int));
+    for(int i=0;i<a;i++){
+        scanf("%d",&n[i]);
+        sum+=n[i];
+    }
+    printf("%d",sum);
+}
+```
 Output:
-//paste your output here
-
- 
-
+![image](https://github.com/user-attachments/assets/8371a99a-9973-47d5-aac5-4c3088f50761)
 
 Result:
 Thus, the program prints the sum of the integers in the array is verified successfully.
@@ -120,12 +205,27 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 
 
 Program:
-//type your code here
+```
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    fgets(str,sizeof(str),stdin);
+    int len=sizeof(str);
+    int count=1;
+     for(int i=0;i<len-1;i++){
+         if(str[i]==' ')
+         count++;
+         
+     }
+     printf("Total number of words in the string is :%d",count);
+    return 0;
+}
 
+```
 Output:
-//paste your output here
-
-
+![image](https://github.com/user-attachments/assets/b0b10555-b867-4e04-848d-7883fdbb8e3a)
 
 Result:
 
